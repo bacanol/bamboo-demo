@@ -26,7 +26,7 @@ RUN apk update -qq \
 
 COPY entrypoint.sh              /entrypoint.sh
 
-ARG BAMBOO_VERSION=5.0.6
+ARG BAMBOO_VERSION=6.3.0
 ARG DOWNLOAD_URL=https://downloads.atlassian.com/software/bamboo/downloads/atlassian-bamboo-${BAMBOO_VERSION}.tar.gz
 COPY . /tmp
 
