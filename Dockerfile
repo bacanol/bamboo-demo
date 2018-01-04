@@ -30,6 +30,6 @@ ARG BAMBOO_VERSION=6.3.0
 ARG DOWNLOAD_URL=https://downloads.atlassian.com/software/bamboo/downloads/atlassian-bamboo-${BAMBOO_VERSION}.tar.gz
 COPY . /tmp
 
-RUN mkdir -p                             ${BAMBOO_INSTALL_DIR} \
-    && curl -L --silent                  ${DOWNLOAD_URL} | tar -xz --strip-components=1 -C "$BAMBOO_INSTALL_DIR" \
-    && chown -R ${RUN_USER}:${RUN_GROUP} ${BAMBOO_INSTALL_DIR}/
+RUN mkdir -p                             ${BAMBOO_INSTALL_DIR} 
+RUN curl -L --silent                  ${DOWNLOAD_URL} | tar -xz --strip-components=1 -C "$BAMBOO_INSTALL_DIR" 
+RUN chown -R ${RUN_USER}:${RUN_GROUP} ${BAMBOO_INSTALL_DIR}/
