@@ -31,5 +31,5 @@ ARG DOWNLOAD_URL=https://downloads.atlassian.com/software/bamboo/downloads/atlas
 COPY . /tmp
 
 RUN mkdir -p                             ${BAMBOO_INSTALL_DIR} \
-    curl -L --silent                  ${DOWNLOAD_URL} | tar -xz --strip-components=1 -C "$BAMBOO_INSTALL_DIR" \
-    chown -R ${RUN_USER}:${RUN_GROUP} ${BAMBOO_INSTALL_DIR}/
+    && curl -L --silent                  ${DOWNLOAD_URL} | tar -xz --strip-components=1 -C "$BAMBOO_INSTALL_DIR" \
+    && chown -R ${RUN_USER}:${RUN_GROUP} ${BAMBOO_INSTALL_DIR}/
